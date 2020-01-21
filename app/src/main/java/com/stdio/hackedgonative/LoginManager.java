@@ -4,6 +4,8 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.stdio.hackedgonative.fucked.AppConfig;
+
 import org.json.JSONObject;
 
 import java.lang.ref.WeakReference;
@@ -13,7 +15,6 @@ import java.util.List;
 import java.util.Observable;
 import java.util.regex.Pattern;
 
-import io.gonative.android.library.AppConfig;
 
 /**
  * Created by weiyin on 3/16/14.

@@ -24,6 +24,8 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
+import com.stdio.hackedgonative.fucked.AppConfig;
+
 import java.io.File;
 import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
@@ -32,7 +34,6 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-import io.gonative.android.library.AppConfig;
 
 /**
  * Created by weiyin on 6/24/14.

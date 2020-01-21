@@ -19,6 +19,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.onesignal.OneSignal;
+import com.stdio.hackedgonative.fucked.AppConfig;
 
 import org.json.JSONObject;
 
@@ -29,7 +30,6 @@ import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import io.gonative.android.library.AppConfig;
 
 
 public class SubscriptionsActivity extends AppCompatActivity {

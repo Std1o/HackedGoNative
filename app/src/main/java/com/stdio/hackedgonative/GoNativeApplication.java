@@ -13,13 +13,13 @@ import com.onesignal.OSSubscriptionObserver;
 import com.onesignal.OSSubscriptionState;
 import com.onesignal.OSSubscriptionStateChanges;
 import com.onesignal.OneSignal;
+import com.stdio.hackedgonative.fucked.AppConfig;
 import com.stdio.hackedgonative.gonative.WebViewSetup;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import io.gonative.android.library.AppConfig;
 
 /**
  * Created by weiyin on 9/2/15.

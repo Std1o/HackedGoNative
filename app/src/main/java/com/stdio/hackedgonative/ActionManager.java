@@ -8,6 +8,7 @@ import android.view.MenuItem;
 
 import com.joanzapata.iconify.IconDrawable;
 import com.joanzapata.iconify.fonts.FontAwesomeIcons;
+import com.stdio.hackedgonative.fucked.AppConfig;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -15,8 +16,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Pattern;
-
-import io.gonative.android.library.AppConfig;
 
 /**
  * Created by weiyin on 11/25/14.

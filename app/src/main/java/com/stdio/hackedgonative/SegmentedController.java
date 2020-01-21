@@ -11,11 +11,12 @@ import android.widget.Spinner;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import com.stdio.hackedgonative.fucked.AppConfig;
+
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import io.gonative.android.library.AppConfig;
 
 /**
  * Created by weiyin on 12/20/15.

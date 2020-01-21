@@ -18,10 +18,10 @@ import android.widget.Toast;
 
 import com.stdio.hackedgonative.MainActivity;
 import com.stdio.hackedgonative.UrlNavigation;
+import com.stdio.hackedgonative.fucked.AppConfig;
 
 import java.util.ArrayList;
 
-import io.gonative.android.library.AppConfig;
 
 /**
 * Created by weiyin on 2/2/15.

@@ -8,6 +8,8 @@ import android.os.Build;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
+import com.stdio.hackedgonative.fucked.AppConfig;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -17,8 +19,6 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.TimeZone;
 import java.util.UUID;
-
-import io.gonative.android.library.AppConfig;
 
 /**
  * Created by weiyin on 8/8/14.

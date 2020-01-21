@@ -33,6 +33,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import com.facebook.appevents.AppEventsLogger;
 import com.onesignal.OSPermissionSubscriptionState;
 import com.onesignal.OneSignal;
+import com.stdio.hackedgonative.fucked.AppConfig;
 import com.stdio.hackedgonative.gonative.LeanWebView;
 
 import org.json.JSONArray;
@@ -53,7 +54,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-import io.gonative.android.library.AppConfig;
 
 public class UrlNavigation {
     public static final String STARTED_LOADING_MESSAGE = "io.gonative.android.webview.started";

@@ -6,6 +6,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.webkit.WebResourceResponse;
 
+import com.stdio.hackedgonative.fucked.AppConfig;
+
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -18,7 +20,6 @@ import java.net.URL;
 import java.util.Locale;
 import java.util.Map;
 
-import io.gonative.android.library.AppConfig;
 
 /**
  * Created by weiyin on 1/29/16.

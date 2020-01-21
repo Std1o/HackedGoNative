@@ -9,11 +9,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.stdio.hackedgonative.fucked.AppConfig;
 import com.stdio.hackedgonative.gonative.LeanWebView;
 
 import java.util.HashSet;
-
-import io.gonative.android.library.AppConfig;
 
 public class SplashActivity extends AppCompatActivity {
     private static final int REQUEST_PERMISSIONS_WEBRTC = 100;

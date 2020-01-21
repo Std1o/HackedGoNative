@@ -18,11 +18,11 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.joanzapata.iconify.IconDrawable;
 import com.joanzapata.iconify.fonts.FontAwesomeIcons;
+import com.stdio.hackedgonative.fucked.AppConfig;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import io.gonative.android.library.AppConfig;
 
 /**
  * Created by weiyin on 4/14/14.

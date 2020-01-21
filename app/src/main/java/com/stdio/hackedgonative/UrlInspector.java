@@ -3,11 +3,11 @@ package com.stdio.hackedgonative;
 import android.content.Context;
 import android.util.Log;
 
+import com.stdio.hackedgonative.fucked.AppConfig;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
-
-import io.gonative.android.library.AppConfig;
 
 /**
  * Created by weiyin on 4/28/14.

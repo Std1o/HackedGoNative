@@ -4,6 +4,8 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.stdio.hackedgonative.fucked.AppConfig;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -11,8 +13,6 @@ import java.io.OutputStreamWriter;
 import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
-import io.gonative.android.library.AppConfig;
 
 /**
  * Created by weiyin on 8/8/14.

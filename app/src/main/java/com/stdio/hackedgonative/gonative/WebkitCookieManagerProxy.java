@@ -1,6 +1,7 @@
 package com.stdio.hackedgonative.gonative;
 
 import com.stdio.hackedgonative.LeanUtils;
+import com.stdio.hackedgonative.fucked.AppConfig;
 
 import java.io.IOException;
 import java.net.CookieManager;
@@ -14,7 +15,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import io.gonative.android.library.AppConfig;
 
 // this syncs cookies between webkit (webview) and java.net classes
 public class WebkitCookieManagerProxy extends CookieManager {

@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.webkit.URLUtil;
 
+import com.stdio.hackedgonative.fucked.AppConfig;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,7 +28,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
-import io.gonative.android.library.AppConfig;
 
 public class LeanUtils {
     private static final String TAG = LeanUtils.class.getName();

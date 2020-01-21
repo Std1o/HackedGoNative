@@ -16,11 +16,10 @@ import com.stdio.hackedgonative.Installation;
 import com.stdio.hackedgonative.MainActivity;
 import com.stdio.hackedgonative.ProfilePicker;
 import com.stdio.hackedgonative.UrlNavigation;
+import com.stdio.hackedgonative.fucked.AppConfig;
 
 import java.io.File;
 import java.util.Map;
-
-import io.gonative.android.library.AppConfig;
 
 /**
  * Created by weiyin on 9/8/15.

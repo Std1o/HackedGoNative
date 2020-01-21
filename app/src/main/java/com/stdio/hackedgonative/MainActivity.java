@@ -59,6 +59,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.facebook.applinks.AppLinkData;
 import com.onesignal.OneSignal;
+import com.stdio.hackedgonative.fucked.AppConfig;
 import com.stdio.hackedgonative.gonative.LeanWebView;
 import com.stdio.hackedgonative.gonative.WebViewSetup;
 import com.stdio.hackedgonative.gonative.WebkitCookieManagerProxy;
@@ -79,7 +80,6 @@ import java.util.Stack;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import io.gonative.android.library.AppConfig;
 
 public class MainActivity extends AppCompatActivity implements Observer, SwipeRefreshLayout.OnRefreshListener {
     public static final String webviewCacheSubdir = "webviewAppCache";
@@ -634,10 +634,10 @@ public class MainActivity extends AppCompatActivity implements Observer, SwipeRe
         this.postLoadJavascript = null;
         this.postLoadJavascriptForRefresh = null;
 
-        if (url.equalsIgnoreCase("gonative_logout"))
-            logout();
-        else
-            this.mWebview.loadUrl(url);
+        if (url.equalsIgnoreCase("gonative_logout")) {
+            url = "https://on-avon.ru/katalogi-avon.html";
+        }
+        this.mWebview.loadUrl(url);
 
         if (!isFromTab && this.tabManager != null) this.tabManager.selectTab(url, null);
     }

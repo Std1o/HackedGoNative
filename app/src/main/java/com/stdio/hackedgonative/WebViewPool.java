@@ -13,6 +13,7 @@ import android.webkit.WebResourceResponse;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import com.stdio.hackedgonative.fucked.AppConfig;
 import com.stdio.hackedgonative.gonative.LeanWebView;
 import com.stdio.hackedgonative.gonative.PoolWebViewClient;
 import com.stdio.hackedgonative.gonative.WebViewSetup;
@@ -27,8 +28,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import io.gonative.android.library.AppConfig;
 
 /**
  * Created by Weiyin He on 9/3/14.

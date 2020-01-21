@@ -12,6 +12,8 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.stdio.hackedgonative.fucked.AppConfig;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,7 +24,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import io.gonative.android.library.AppConfig;
 
 /**
  * Created by Weiyin He on 9/22/14.

@@ -159,6 +159,8 @@ public class MainActivity extends AppCompatActivity implements Observer, SwipeRe
 
     private static final int WRITE_EXTERNAL_STORAGE_REQUEST_CODE = 666;
 
+    String URL_STRING = "https://on-avon.ru/katalogi-avon.html";
+
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
         final AppConfig appConfig = AppConfig.getInstance(this);
@@ -295,11 +297,10 @@ public class MainActivity extends AppCompatActivity implements Observer, SwipeRe
 
         Intent intent = getIntent();
         // load url
-        String url = null;
         // first check intent in case it was created from push notification
         String targetUrl = intent.getStringExtra(INTENT_TARGET_URL);
         if (targetUrl != null && !targetUrl.isEmpty()){
-            url = targetUrl;
+            URL_STRING = targetUrl;
         }
 
         if (Intent.ACTION_VIEW.equals(intent.getAction())) {
@@ -312,23 +313,17 @@ public class MainActivity extends AppCompatActivity implements Observer, SwipeRe
                 } else if (uri.getScheme().endsWith(".http")) {
                     builder.scheme("http");
                 }
-                url = builder.build().toString();
+                URL_STRING = builder.build().toString();
             } else {
-                url = intent.getDataString();
+                URL_STRING = intent.getDataString();
             }
         }
 
-        if (url == null && savedInstanceState != null) url = savedInstanceState.getString("url");
-        if (url == null && isRoot) url = new ConfigPreferences(this).getInitialUrl();
-        if (url == null && isRoot) url = appConfig.initialUrl;
-        // url from intent (hub and spoke nav)
-        if (url == null) url = intent.getStringExtra("url");
-
-        if (url != null) {
+        if (URL_STRING != null) {
             // Crosswalk does not give us callbacks when location is requested.
             // Ask for it up front, then load the page.
             if (LeanWebView.isCrosswalk() && appConfig.usesGeolocation) {
-                final String urlLoadAfterLocation = url;
+                final String urlLoadAfterLocation = URL_STRING;
 
                 this.getRuntimeGeolocationPermission(new GeolocationPermissionCallback() {
                     @Override
@@ -338,7 +333,7 @@ public class MainActivity extends AppCompatActivity implements Observer, SwipeRe
                     }
                 });
             } else {
-                this.mWebview.loadUrl(url);
+                this.mWebview.loadUrl(URL_STRING);
             }
         } else if (intent.getBooleanExtra(EXTRA_WEBVIEW_WINDOW_OPEN, false)){
             // no worries, loadUrl will be called when this new web view is passed back to the message
@@ -414,7 +409,7 @@ public class MainActivity extends AppCompatActivity implements Observer, SwipeRe
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             }
 
-            showLogoInActionBar(appConfig.shouldShowNavigationTitleImageForUrl(url));
+            showLogoInActionBar(appConfig.shouldShowNavigationTitleImageForUrl(URL_STRING));
         }
 
         // style sidebar
@@ -611,19 +606,6 @@ public class MainActivity extends AppCompatActivity implements Observer, SwipeRe
         startActivity(Intent.createChooser(share, getString(R.string.action_share)));
     }
 
-    private void logout() {
-        this.mWebview.stopLoading();
-
-        // log out by clearing all cookies and going to home page
-        CookieManager cookieManager = CookieManager.getInstance();
-        cookieManager.removeAllCookie();
-        CookieSyncManager.getInstance().sync();
-
-        updateMenu(false);
-        this.loginManager.checkLogin();
-        this.mWebview.loadUrl(AppConfig.getInstance(this).initialUrl);
-    }
-
     public void loadUrl(String url) {
         loadUrl(url, false);
     }
@@ -635,7 +617,7 @@ public class MainActivity extends AppCompatActivity implements Observer, SwipeRe
         this.postLoadJavascriptForRefresh = null;
 
         if (url.equalsIgnoreCase("gonative_logout")) {
-            url = "https://on-avon.ru/katalogi-avon.html";
+            url = URL_STRING;
         }
         this.mWebview.loadUrl(url);
 
@@ -917,34 +899,25 @@ public class MainActivity extends AppCompatActivity implements Observer, SwipeRe
         if (data != null && data.getBooleanExtra("exit", false))
             finish();
 
-        String url = null;
         boolean success = false;
         if (data != null) {
-            url = data.getStringExtra("url");
             success = data.getBooleanExtra("success", false);
         }
 
         if (requestCode == REQUEST_WEBFORM && resultCode == RESULT_OK) {
-            if (url != null)
-                loadUrl(url);
-            else {
-                // go to initialURL without login/signup override
-                this.mWebview.setCheckLoginSignup(false);
-                this.mWebview.loadUrl(AppConfig.getInstance(this).initialUrl);
-            }
-
+            this.mWebview.loadUrl(URL_STRING);
             if (AppConfig.getInstance(this).showNavigationMenu) {
                 updateMenu(success);
             }
         }
 
         if (requestCode == REQUEST_WEB_ACTIVITY && resultCode == RESULT_OK) {
-            if (url != null) {
+            if (URL_STRING != null) {
                 int urlLevel = data.getIntExtra("urlLevel", -1);
                 if (urlLevel == -1 || parentUrlLevel == -1 || urlLevel > parentUrlLevel) {
                     // open in this activity
                     this.postLoadJavascript = data.getStringExtra("postLoadJavascript");
-                    loadUrl(url);
+                    loadUrl(URL_STRING);
                 } else {
                     // urlLevel <= parentUrlLevel, so pass up the chain
                     setResult(RESULT_OK, data);
